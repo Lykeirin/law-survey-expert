@@ -1,0 +1,30 @@
+{
+  "name": "law-survey-expert",
+  "displayName": "法学社会调查多智能体系统",
+  "version": "1.0.0",
+  "description": "覆盖法学社会调查全流程的 AI 辅助系统，包含7个阶段智能体和5个专业能力模块",
+  "author": "南窗寄醉",
+  "license": "MIT",
+  "homepage": "",
+  "agents": [
+    "agents/orchestrator.md",
+    "agents/stage1-topic-selection.md",
+    "agents/stage2-research-design.md",
+    "agents/stage3-questionnaire-design.md",
+    "agents/stage4-survey-implementation.md",
+    "agents/stage5-data-statistics.md",
+    "agents/stage6-data-analysis.md",
+    "agents/stage7-report-generation.md"
+  ],
+  "commands": [
+    "commands/law-survey-start.md"
+  ],
+  "skills": [
+    "skills/legal-knowledge-retrieval/SKILL.md",
+    "skills/questionnaire-design-methodology/SKILL.md",
+    "skills/statistical-analysis/SKILL.md",
+    "skills/academic-writing/SKILL.md",
+    "skills/data-visualization/SKILL.md"
+  ],
+  "categories": ["law", "survey", "research"]
+}

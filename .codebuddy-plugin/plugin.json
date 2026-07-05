@@ -1,30 +1,122 @@
 {
   "name": "law-survey-expert",
-  "displayName": "法学社会调查多智能体系统",
   "version": "1.0.0",
-  "description": "覆盖法学社会调查全流程的 AI 辅助系统，包含7个阶段智能体和5个专业能力模块",
-  "author": "南窗寄醉",
-  "license": "MIT",
-  "homepage": "",
+  "description": "Legal social survey multi-agent system covering the full workflow from topic selection to final report",
+  "author": {
+    "name": "南窗寄醉",
+    "email": "xuquanquan@zjnu.edu.cn"
+  },
   "agents": [
-    "agents/orchestrator.md",
-    "agents/stage1-topic-selection.md",
-    "agents/stage2-research-design.md",
-    "agents/stage3-questionnaire-design.md",
-    "agents/stage4-survey-implementation.md",
-    "agents/stage5-data-statistics.md",
-    "agents/stage6-data-analysis.md",
-    "agents/stage7-report-generation.md"
+    "./agents/law-survey-expert-team-lead.md",
+    "./agents/stage1-topic-selection.md",
+    "./agents/stage2-research-design.md",
+    "./agents/stage3-questionnaire-design.md",
+    "./agents/stage4-survey-implementation.md",
+    "./agents/stage5-data-statistics.md",
+    "./agents/stage6-data-analysis.md",
+    "./agents/stage7-report-generation.md"
   ],
-  "commands": [
-    "commands/law-survey-start.md"
+
+  "expertType": "team",
+  "agentName": "law-survey-expert-team-lead",
+  "teamInfo": {
+    "leadAgent": "law-survey-expert-team-lead",
+    "memberAgents": [
+      "stage1-topic-selection",
+      "stage2-research-design",
+      "stage3-questionnaire-design",
+      "stage4-survey-implementation",
+      "stage5-data-statistics",
+      "stage6-data-analysis",
+      "stage7-report-generation"
+    ]
+  },
+
+  "displayName": {
+    "en": "Law Survey Expert Team",
+    "zh": "法学社会调查专家团"
+  },
+  "profession": {
+    "en": "Law Survey Expert Team",
+    "zh": "法学社会调查专家团"
+  },
+  "displayDescription": {
+    "en": "Covers the full legal social survey workflow with 7 stage agents from topic selection to final report",
+    "zh": "覆盖法学社会调查全流程，含7个阶段专业智能体，从选题沟通到报告输出的一站式辅助系统"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": {
+    "zh": "我想进行一项法学社会调查，请帮我评估当前阶段并引导我进入正确的智能体",
+    "en": "I want to conduct a legal social survey. Please assess my current stage and guide me to the right agent"
+  },
+  "plugin": "law-survey-expert",
+  "tags": [
+    { "en": "Legal Survey", "zh": "法学调查" },
+    { "en": "Empirical Research", "zh": "实证研究" },
+    { "en": "Academic Writing", "zh": "学术写作" }
   ],
-  "skills": [
-    "skills/legal-knowledge-retrieval/SKILL.md",
-    "skills/questionnaire-design-methodology/SKILL.md",
-    "skills/statistical-analysis/SKILL.md",
-    "skills/academic-writing/SKILL.md",
-    "skills/data-visualization/SKILL.md"
+  "quickPrompts": [
+    { "en": "I want to conduct a legal social survey, help me assess my current stage", "zh": "我想进行一项法学社会调查，请帮我评估当前阶段并引导我进入正确的智能体" },
+    { "en": "I already have a topic, help me design the research plan", "zh": "我已有选题，帮我设计研究方案" },
+    { "en": "I have questionnaire data, help me analyze it", "zh": "我已有问卷数据，帮我直接分析" }
   ],
-  "categories": ["law", "survey", "research"]
+  "members": [
+    {
+      "id": "law-survey-expert-team-lead",
+      "displayName": { "en": "Orchestrator", "zh": "总控编排器" },
+      "profession": { "en": "Survey Orchestrator", "zh": "调查总控编排器" },
+      "avatar": "avatars/law-survey-expert-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "stage1-topic-selection",
+      "displayName": { "en": "Topic Selector", "zh": "选题沟通员" },
+      "profession": { "en": "Topic Selection Specialist", "zh": "选题沟通专家" },
+      "avatar": "avatars/stage1-topic-selection.png",
+      "role": "member"
+    },
+    {
+      "id": "stage2-research-design",
+      "displayName": { "en": "Research Designer", "zh": "方案设计师" },
+      "profession": { "en": "Research Design Specialist", "zh": "研究方案设计专家" },
+      "avatar": "avatars/stage2-research-design.png",
+      "role": "member"
+    },
+    {
+      "id": "stage3-questionnaire-design",
+      "displayName": { "en": "Questionnaire Designer", "zh": "问卷设计师" },
+      "profession": { "en": "Questionnaire Design Specialist", "zh": "问卷设计专家" },
+      "avatar": "avatars/stage3-questionnaire-design.png",
+      "role": "member"
+    },
+    {
+      "id": "stage4-survey-implementation",
+      "displayName": { "en": "Survey Implementer", "zh": "调查实施员" },
+      "profession": { "en": "Survey Implementation Specialist", "zh": "调查实施专家" },
+      "avatar": "avatars/stage4-survey-implementation.png",
+      "role": "member"
+    },
+    {
+      "id": "stage5-data-statistics",
+      "displayName": { "en": "Data Statistician", "zh": "数据统计员" },
+      "profession": { "en": "Statistical Analysis Specialist", "zh": "数据统计分析专家" },
+      "avatar": "avatars/stage5-data-statistics.png",
+      "role": "member"
+    },
+    {
+      "id": "stage6-data-analysis",
+      "displayName": { "en": "Data Analyst", "zh": "数据分析员" },
+      "profession": { "en": "Legal Empirical Analyst", "zh": "法学实证分析专家" },
+      "avatar": "avatars/stage6-data-analysis.png",
+      "role": "member"
+    },
+    {
+      "id": "stage7-report-generation",
+      "displayName": { "en": "Report Writer", "zh": "报告撰写员" },
+      "profession": { "en": "Academic Report Writer", "zh": "学术报告撰写专家" },
+      "avatar": "avatars/stage7-report-generation.png",
+      "role": "member"
+    }
+  ]
 }

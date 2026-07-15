@@ -60,7 +60,8 @@ maxTurns: 200
 - 调用 `stage4-survey-implementation`
 - 输入：完整问卷 + 《设计说明》
 - 产出：《调查实施方案》（含样本招募、质量控制、数据录入规范）
-- 实际调查由用户线下执行，完成后将数据传入下一阶段
+- 如有在线发卷需求，stage4 会加载 `skills/limesurvey` Skill，通过 LimeSurvey API 自动建卷（含跳题/终止逻辑），返回 Survey ID 和填写链接
+- 实际调查由用户线下执行或通过 LimeSurvey 链接分发，完成后将数据传入下一阶段
 
 ### Phase 5: 数据统计（Stage 5）
 - 调用 `stage5-data-statistics`
@@ -134,6 +135,8 @@ maxTurns: 200
 | 研究方法、抽样、变量框架 | stage2-research-design |
 | 问卷设计、量表选择 | stage3-questionnaire-design |
 | 调查组织、质量控制 | stage4-survey-implementation |
+| 在线建卷、LimeSurvey 发布、获取填写链接 | stage4-survey-implementation（加载 skills/limesurvey） |
+| 回收 LimeSurvey 问卷数据 | stage4-survey-implementation（使用 limesurvey_client.py） |
 | 数据统计、信效度检验 | stage5-data-statistics |
 | 法学实证分析、政策建议 | stage6-data-analysis |
 | 报告撰写、论文排版 | stage7-report-generation |

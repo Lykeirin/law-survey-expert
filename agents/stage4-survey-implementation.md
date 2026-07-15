@@ -48,7 +48,7 @@ maxTurns: 50
 
 ### 注意
 - 建卷前必须先向用户确认能否开始建卷
-- 确认配置文件中 `url` 和 `base_url` 正确（内网 `localhost:8088`，外网 `http://47.99.76.162:8088`）
+- 确认配置文件中 `url` 和 `base_url` 正确（内网默认 `http://localhost:8088`，外网填实际部署地址 `<LIMESURVEY_BASE_URL>`）
 - 问卷自带跳题/终止逻辑（通过 Expression Manager relevance 方程实现），无需手动配置
 
 ## SendMessage 回传
